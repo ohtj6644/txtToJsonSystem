@@ -1,9 +1,9 @@
-
-server:
-    port: 7070
-
 spring:
-    data:
-        mongodb:
-            uri: mongodb://localhost:27017/test1234
+    datasource:
+        driver-class-name: cubrid.jdbc.driver.CUBRIDDriver
+        url: jdbc:cubrid:localhost:33000:demodb:public::?charSet=utf-8
+        username: dba
+
+    jpa:
+        database-platform: org.hibernate.dialect.CUBRIDDialect
 
