@@ -4,12 +4,12 @@ package com.example.testToJSON;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.List;
 
-@Controller
-@RequiredArgsConstructor
+@RestController
 public class RegulationController {
 
 
@@ -21,10 +21,10 @@ public class RegulationController {
 
     @GetMapping("/convertToJSON")
     public List<Regulation> convertToJSON() {
-        String filePath = "path/to/your/text/file.txt";
+        String filePath = "classpath:file/test.txt";
 
         try {
-            List<Regulation> regulations = regulationParser.parseRegulations(filePath);
+            List<Regulation> regulations = regulationParser.parseRegulations();
             return regulations;
         } catch (IOException e) {
             e.printStackTrace();

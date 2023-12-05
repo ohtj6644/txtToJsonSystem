@@ -1,11 +1,13 @@
 package com.example.testToJSON;
 
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Data
 public class Regulation {
     private String 사규아이디;
     private String 사규부모아이디;
